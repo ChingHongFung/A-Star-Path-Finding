@@ -11,6 +11,7 @@ Essentially, the algorithm seeks for the shortest path by considering a value f_
 ![Manhattan_distance](https://user-images.githubusercontent.com/91271318/137496871-1b7b3446-afb1-465c-9230-c9e8fd46c85c.png)
 
 (https://en.wikipedia.org/wiki/Taxicab_geometry)
+
 For my implementation, I used the Manhattan distance as a lowerbound heuristic funciton instead of other measures such as Euclidean. This is because the path could not traverse diagonally so the Manhattan distance is a more conservative estimation for paths along the x,y directions. This heuristic is very simple to implement as we only need to find the absolute difference in Cartesian coordinates of the two points. 
 
 ##### Improvement to progamme by "Tech with Tim"
