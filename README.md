@@ -17,9 +17,15 @@ For my implementation, I used the Manhattan distance as a lowerbound heuristic f
 ##### Improvement to progamme by "Tech with Tim"
 source.py is the original implementation of the algorithm. I added a few extra features and refined certain aspects of the programme including custom grid sizing, additional costs to certain nodes, portals between nodes and refined optimisaion heuristic function.
 
-#### Grid spacing
+##### Grid spacing
 ![grid_spcaing](https://user-images.githubusercontent.com/91271318/137500839-105d0726-c39f-469f-9606-ba1df9ae3758.png)
 Running main() allows you to pick a grid size of your own choice. Instructions are printed to show how the pathfinding game works.
+
+##### Printing out total number of steps
+I also added codes to count the total number of steps required for the shortest path (incorporating the efffect of costly steps, explained further below). If no possible solution coul be found, a statemeny will also be printed.
+![no_solution](https://user-images.githubusercontent.com/91271318/137507641-99555e89-7a53-43dc-bcd7-aabeaa2dfc00.png)
+![total_steps](https://user-images.githubusercontent.com/91271318/137507643-b9cc745e-2df0-4666-9a3c-f1c17a8a81dc.png)
+
 
 #### 2) Basic visualisation with no obstacless
 ##### update_neighbors()
