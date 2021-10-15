@@ -4,6 +4,7 @@ This project is inspired by a youtuber "Tech with Tim" who implements the A-star
 
 #### 1) Basic overview
 ![equation](https://user-images.githubusercontent.com/91271318/137495297-7b3dde30-8212-4182-bf15-2be5a79811eb.png)
+
 Essentially, the algorithm seeks for the shortest path by considering a value f_score of all available neighbors next to a current node. For each neighbor, f_score is composed of the g_score and h_score. g_score measures the cost of the path (the number of steps needed) to travel from the start to this neighbor; h_score is a heuristic function that estimates the cheapest cost to reach the end point from this neighbor. By sequentially, considering the f_score of each node, we could insert these values into a priority queue which allows the next iteration to priotise searching at the node with lowest f_score. Each iteration updates the corresponding scores while removing the already-considered nodes from the queue until a solution is found. 
 
 ##### Heuristic function
