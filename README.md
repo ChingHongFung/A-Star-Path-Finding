@@ -7,7 +7,7 @@ This project is inspired by a youtuber "Tech with Tim" who implements the A-star
 Essentially, the algorithm seeks for the shortest path by considering a value f_score of all available neighbors next to a current node. For each neighbor, f_score is composed of the g_score and h_score. g_score measures the cost of the path (the number of steps needed) to travel from the start to this neighbor; h_score is a heuristic function that estimates the cheapest cost to reach the end point from this neighbor. By sequentially, considering the f_score of each node, we could insert these values into a priority queue which allows the next iteration to priotise searching at the node with lowest f_score. Each iteration updates the corresponding scores while removing the already-considered nodes from the queue until a solution is found. 
 
 #### Heuristic function
-![Manhattan_distance](https://user-images.githubusercontent.com/91271318/137496871-1b7b3446-afb1-465c-9230-c9e8fd46c85c.png)
+![Manhattan_distance](https://user-images.githubusercontent.com/91271318/137496871-1b7b3446-afb1-465c-9230-c9e8fd46c85c.png = 250*)
 
 (https://en.wikipedia.org/wiki/Taxicab_geometry)
 For my implementation, I used the Manhattan distance as a lowerbound heuristic funciton instead of other measures such as Euclidean. This is because the path could not traverse diagonally so the Manhattan distance is a more conservative estimation for paths along the x,y directions. This heuristic is very simple to implement as we only need to find the absolute difference in Cartesian coordinates of the two points. 
