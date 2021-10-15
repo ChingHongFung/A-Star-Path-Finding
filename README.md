@@ -22,13 +22,13 @@ source.py is the original implementation of the algorithm. I added a few extra f
 Running main() allows you to pick a grid size of your own choice. Instructions are printed to show how the pathfinding game works.
 
 ##### Printing out total number of steps
-I also added codes to count the total number of steps required for the shortest path (incorporating the efffect of costly steps, explained further below) ![total_steps](https://user-images.githubusercontent.com/91271318/137507643-b9cc745e-2df0-4666-9a3c-f1c17a8a81dc.png). If no possible solution coul be found, a statemeny will also be printed. ![no_solution](https://user-images.githubusercontent.com/91271318/137507641-99555e89-7a53-43dc-bcd7-aabeaa2dfc00.png)
+I also added codes to count the total number of steps required for the shortest path (incorporating the efffect of costly steps, explained further below) ![total_steps](https://user-images.githubusercontent.com/91271318/137507643-b9cc745e-2df0-4666-9a3c-f1c17a8a81dc.png). If no possible solution could be found, a statemeny will also be printed. ![no_solution](https://user-images.githubusercontent.com/91271318/137507641-99555e89-7a53-43dc-bcd7-aabeaa2dfc00.png)
 
 #### 2) Basic visualisation with no obstacless
 ##### update_neighbors()
 ![update_neighbors](https://user-images.githubusercontent.com/91271318/137501410-33db8d7c-12c9-40c0-a28d-9c65e1112ae9.png)
 
-update_neighbors() is called to go through each spot instance of the grid to assign neighbors to each node. Barriers and nodes outside the grid are disregarded. Neighbors are stored as an attribute of each spot instance making it easy to retrieve. Light brown colours show nodes that have been considered and thrown out of the queue; dark brown shows nodes that are open and on the queue waiting to be considered. Queuing system depends on the f_score of each node which is stored in the priority queue structure. Video 1 shows the game running with no barriers.
+update_neighbors() is called to go through each spot instance of the grid to assign neighbors to each node. Barriers and nodes outside the grid are disregarded. Neighbors are stored as an attribute of each spot instance making it easy to retrieve. Light brown colours show nodes that have been considered and thrown out of the queue; dark brown shows nodes that are open and on the queue waiting to be considered. Queuing system depends on the f_score of each node which is stored in the priority queue structure. Video 1 shows the game running with no barriers. Once a solution is found, reconstruct_path() is called to draw out the shortest path.
 
 Video 1: Basic run with no additonal elements
 
@@ -38,13 +38,13 @@ https://user-images.githubusercontent.com/91271318/137501043-ec380f5f-9ea7-4967-
 #### add_cost()
 ![add_cost](https://user-images.githubusercontent.com/91271318/137504502-2a0061b9-400e-4092-854e-70896bcc8bca.png)
 
-add_cost() allows additional costs to be added to nodes upon mid scroll click. Values are again stored as an attribute within the nodes. The more red a block is, the higher the cost. In Video 2, notice when the open nodes reach the red nodes at the bottom left, the algorithm first looks away at other nodes with cost of 1 (white nodes) on the right hand side. This is because, additional costs increased the g_score of the red nodes making their overall f_scores higher so they fall into lower posiitons in the queue. After some iterations, as the open nodes spread to futher nodes on the right, the algorithm jumps back to the bottom left as they have lower f_scores. Finally, a path is found that traverses through the bottom left.
+add_cost() allows additional costs to be added to nodes upon mid scroll click. Cost values are again stored as an attribute within the nodes. The more red a block is, the higher the cost. In Video 2, notice when the open nodes reach the red nodes at the bottom left, the algorithm first looks away at other nodes with cost of 1 (white nodes) on the right hand side. This is because, additional costs increase the g_score of the red nodes making their overall f_scores higher so they fall into lower positions in the queue. After some iterations, as the open nodes spread to futher nodes on the right, the algorithm jumps back to the bottom left as they now have lower f_scores. Finally, a path is found that traverses through the bottom left.
 
 Video 2: Costly nodes 1
 
 https://user-images.githubusercontent.com/91271318/137501820-34b18d7e-643b-4561-b437-c22d5a879253.mp4
 
-In Video 3, we could again see that algorithm bounces back and forth between the 'red path' around the edge and the 'white snake path'. Again the algorithm always looks for the node with the lowest f_score at each iteration. The high red costs along the edges resulted in a final shortest path that goes around the snake.
+In Video 3, we could again see that the algorithm bounces back and forth between the 'red path' around the edge and the 'white snake path'. Again the algorithm always looks for the node with the lowest f_score at each iteration. The high red costs along the edges resulted in a final shortest path that goes around the snake.
 
 Video 3: Costly nodes 2
 
@@ -54,7 +54,7 @@ https://user-images.githubusercontent.com/91271318/137501831-a6c9c066-89df-40b5-
 ##### check_portal() and add_portal_neighbors()
 ![check_portal add_portal_neighbors](https://user-images.githubusercontent.com/91271318/137505099-a70aab4c-9ad5-4f99-ad9c-89898e5928ab.png)
 
-check_portal() and add_portal_neighbors() connect portals of the same type. Portals could be added by hovering the mouse over a node and tapping key 'p'. This turns a node into a portal. Portals of the same type could be connected. Essentially, what this does is neighbors adjacent to each portal would have direct access to neighbours of portals of the same type. By clicking on an existing portal again using 'p', it changes the type of that portal to the alternative. This way only portals of the same type could be connected. Video 4 shows how a single pair of portals allows the path to be jumped across the map.
+check_portal() and add_portal_neighbors() connect portals of the same type. Portals could be added by hovering the mouse over a node and tapping the key 'p'. This turns a node into a portal. Portals of the same type could be connected. Essentially, what this does is that neighbors adjacent to each portal would have direct access to neighbours of portals of the same type. By clicking on an existing portal again using 'p', it changes the type of that portal to the alternative. This way only portals of the same type could be connected. Video 4 shows how a single pair of portals allows the path to be jumped across the map.
 
 Video 4: Single portal type
 
@@ -76,7 +76,9 @@ Video 6: Two types of portals
 https://user-images.githubusercontent.com/91271318/137505720-9271d14d-492f-4e00-88f9-d9cc425699f6.mp4
 
 #### 5) Future improvements
-Future improvements could be made that allows the types of portals to extend to more than two types. This will encompass more color schemes for visualisation. In addition, on top of costly paths, we could introduce nodes with zero costs that will speed up paths in certain directions.
+Future improvements could be made that allows the types of portals to extend to more than two types. This will encompass more color schemes for visualisation. In addition, on top of costly paths, we could introduce nodes with zero costs that will speed up paths in certain directions. More considerations could be given to the heuristic function to optimise its search.
+
+The basic layout of this project could potentially be extended to other path-finding algorithms other than A* such as D*. We could add features such as negative weights to further explore these algorithms as well.
 
 
 
