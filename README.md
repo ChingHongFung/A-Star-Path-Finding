@@ -54,7 +54,7 @@ https://user-images.githubusercontent.com/91271318/137501831-a6c9c066-89df-40b5-
 ##### check_portal() and add_portal_neighbors()
 ![check_portal add_portal_neighbors](https://user-images.githubusercontent.com/91271318/137505099-a70aab4c-9ad5-4f99-ad9c-89898e5928ab.png)
 
-check_portal() and add_portal_neighbors() connect portals of the same type. Portals could be added by hovering the mouse over a node and tapping key 'p'. This turns a node into a portal. Portals of the same type could be connected. Essentially, what this does is neighbors adjacent to each portal would have direct access to neighbours of portals of the same type. By clicking on an existing portal one one type again using 'p', it changes the type of that portal to the alternative. This way only portals of the same type could be connected. Video 4 shows how a single pair of portals allow the path to be jumped across the map.
+check_portal() and add_portal_neighbors() connect portals of the same type. Portals could be added by hovering the mouse over a node and tapping key 'p'. This turns a node into a portal. Portals of the same type could be connected. Essentially, what this does is neighbors adjacent to each portal would have direct access to neighbours of portals of the same type. By clicking on an existing portal again using 'p', it changes the type of that portal to the alternative. This way only portals of the same type could be connected. Video 4 shows how a single pair of portals allows the path to be jumped across the map.
 
 Video 4: Single portal type
 
@@ -63,7 +63,7 @@ https://user-images.githubusercontent.com/91271318/137505705-63daab53-8ab2-4f12-
 ##### Changing the heuristic optimising direction
 ![portal_h_optimiser](https://user-images.githubusercontent.com/91271318/137506538-f74c9b0d-6b58-4fa7-8447-7a9e523cfdfb.png)
 
-This code varies the method the heuristic function optimises through. Instead of optimising by looking at the h_score with the end node in every iteration, it loks at the lower h_score that leads the search closer to portals that could potentially speed up the entire computation. Notive in Video 5 that the search runs in two spikey directions towards the two pink portals in the beginning, once these portals are found, the path would have access to neighbors near the bottom edge allowing the shortest path to be found much quicker.
+This code varies the method the heuristic function optimises through. Instead of optimising by looking at the h_score with the end node in every iteration, it looks at the lower h_score that leads the search closer to portals that could potentially speed up the entire computation. Notice in Video 5 that the search runs in two spikey directions towards the two pink portals in the beginning, once these portals are found, the path would have access to neighbors near the bottom edge allowing the shortest path to be found much quicker.
 
 Video 5: Multiple portals of same type
 
@@ -75,6 +75,8 @@ Video 6: Two types of portals
 
 https://user-images.githubusercontent.com/91271318/137505720-9271d14d-492f-4e00-88f9-d9cc425699f6.mp4
 
+#### 5) Future improvements
+Future improvements could be made that allows the types of portals to extend to more than two types. This will encompass more color schemes for visualisation. In addition, on top of costly paths, we could introduce nodes with zero costs that will speed up paths in certain directions.
 
 
 
