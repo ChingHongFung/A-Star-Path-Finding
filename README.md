@@ -22,10 +22,7 @@ source.py is the original implementation of the algorithm. I added a few extra f
 Running main() allows you to pick a grid size of your own choice. Instructions are printed to show how the pathfinding game works.
 
 ##### Printing out total number of steps
-I also added codes to count the total number of steps required for the shortest path (incorporating the efffect of costly steps, explained further below). If no possible solution coul be found, a statemeny will also be printed.
-![no_solution](https://user-images.githubusercontent.com/91271318/137507641-99555e89-7a53-43dc-bcd7-aabeaa2dfc00.png)
-![total_steps](https://user-images.githubusercontent.com/91271318/137507643-b9cc745e-2df0-4666-9a3c-f1c17a8a81dc.png)
-
+I also added codes to count the total number of steps required for the shortest path (incorporating the efffect of costly steps, explained further below) ![total_steps](https://user-images.githubusercontent.com/91271318/137507643-b9cc745e-2df0-4666-9a3c-f1c17a8a81dc.png). If no possible solution coul be found, a statemeny will also be printed. ![no_solution](https://user-images.githubusercontent.com/91271318/137507641-99555e89-7a53-43dc-bcd7-aabeaa2dfc00.png)
 
 #### 2) Basic visualisation with no obstacless
 ##### update_neighbors()
