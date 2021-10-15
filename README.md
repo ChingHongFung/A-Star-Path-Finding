@@ -28,7 +28,7 @@ I also added codes to count the total number of steps required for the shortest 
 ##### update_neighbors()
 ![update_neighbors](https://user-images.githubusercontent.com/91271318/137501410-33db8d7c-12c9-40c0-a28d-9c65e1112ae9.png)
 
-update_neighbors is called to go through each spot instance of the grid to assign neighbors to each node. Barriers and nodes outside the grid are disregarded. Neighbors are stored as an attribute of each spot instance making it easy to retrieve. Light brown colours show nodes that have been considered and thrown out of the queue; dark brown shows nodes that are open and on the queue waiting to be considered. Queuing system depends on the f_score of each node which is stored in the priority queue structure. Video 1 shows the game running with no barriers.
+update_neighbors() is called to go through each spot instance of the grid to assign neighbors to each node. Barriers and nodes outside the grid are disregarded. Neighbors are stored as an attribute of each spot instance making it easy to retrieve. Light brown colours show nodes that have been considered and thrown out of the queue; dark brown shows nodes that are open and on the queue waiting to be considered. Queuing system depends on the f_score of each node which is stored in the priority queue structure. Video 1 shows the game running with no barriers.
 
 Video 1: Basic run with no additonal elements
 
@@ -54,7 +54,7 @@ https://user-images.githubusercontent.com/91271318/137501831-a6c9c066-89df-40b5-
 ##### check_portal() and add_portal_neighbors()
 ![check_portal add_portal_neighbors](https://user-images.githubusercontent.com/91271318/137505099-a70aab4c-9ad5-4f99-ad9c-89898e5928ab.png)
 
-check_portal() and add_portal_neighbors connect portals of the same type. Portals could be added by hovering the mouse over a node and tapping key 'p'. This turns a node into a portal. Portals of the same type could be connected. Essentially, what this does is neighbors adjacent to each portal would have direct access to neighbours of portals of the same type. By clicking on an existing portal one one type again using 'p', it changes the type of that portal to the alternative. This way only portals of the same type could be connected. Video 4 shows how a single pair of portals allow the path to be jumped across the map.
+check_portal() and add_portal_neighbors() connect portals of the same type. Portals could be added by hovering the mouse over a node and tapping key 'p'. This turns a node into a portal. Portals of the same type could be connected. Essentially, what this does is neighbors adjacent to each portal would have direct access to neighbours of portals of the same type. By clicking on an existing portal one one type again using 'p', it changes the type of that portal to the alternative. This way only portals of the same type could be connected. Video 4 shows how a single pair of portals allow the path to be jumped across the map.
 
 Video 4: Single portal type
 
