@@ -212,7 +212,7 @@ def algorithm(draw, grid, start, end, portals_pink, portals_purple):
             # temp_g_score is added with the cost of each neighbor block in mind
             temp_g_score = g_score[current] + 1 * neighbor.cost
 
-            # If temp_g_score is lower than previouslt recorded, meaning we found a path with lower cost to get to this neighbour, update its score
+            # If temp_g_score is lower than previously recorded, meaning we found a path with lower cost to get to this neighbour, update its score
             if temp_g_score < g_score[neighbor]:
                 came_from[neighbor] = current # Track where the lower-cost path came from
                 g_score[neighbor] = temp_g_score # Update score
